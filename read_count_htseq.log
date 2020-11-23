@@ -1,0 +1,35 @@
+$hisat2 -x /n/shared_db/hg19/hisat2/2.1.0/genome -1 ../../fastq/AH_S1_L001_R1.fastq.gz -2 ../../fastq/AH_S1_L001_R2.fastq.gz --mm -p 4 --dta --known-splicesite-infile /n/shared_db/hg19/hisat2/2.1.0/splicesites.txt | samtools view -Suh -f 1 - | samtools sort - -n -o AH_S1.b37.bam && htseq-count -f bam AH_S1.b37.bam /n/shared_db/hg19/hisat2/2.1.0/genes.gtf > hisat2_AH_S1/AH_S1.read.count.txt
+
+1000000 reads; of these:
+  1000000 (100.00%) were paired; of these:
+    273196 (27.32%) aligned concordantly 0 times
+    726659 (72.67%) aligned concordantly exactly 1 time
+    145 (0.01%) aligned concordantly >1 times
+    ----
+    273196 pairs aligned concordantly 0 times; of these:
+      167298 (61.24%) aligned discordantly 1 time
+    ----
+    105898 pairs aligned 0 times concordantly or discordantly; of these:
+      211796 mates make up the pairs; of these:
+        158305 (74.74%) aligned 0 times
+        53464 (25.24%) aligned exactly 1 time
+        27 (0.01%) aligned >1 times
+92.08% overall alignment rate
+
+$hisat2 -x /n/shared_db/hg19/hisat2/2.1.0/genome -1 ../../fastq/CH_S2_L001_R1.fastq.gz -2 ../../fastq/CH_S2_L001_R2.fastq.gz --mm -p 4 --dta --known-splicesite-infile /n/shared_db/hg19/hisat2/2.1.0/splicesites.txt | samtools view -Suh -f 1 - | samtools sort - -n -o CH_S2.b37.bam && htseq-count -f bam CH_S2.b37.bam /n/shared_db/hg19/hisat2/2.1.0/genes.gtf > hisat2_CH_S2/CH_S2.read.count.txt
+
+1000000 reads; of these:
+  1000000 (100.00%) were paired; of these:
+    136462 (13.65%) aligned concordantly 0 times
+    859498 (85.95%) aligned concordantly exactly 1 time
+    4040 (0.40%) aligned concordantly >1 times
+    ----
+    136462 pairs aligned concordantly 0 times; of these:
+      1436 (1.05%) aligned discordantly 1 time
+    ----
+    135026 pairs aligned 0 times concordantly or discordantly; of these:
+      270052 mates make up the pairs; of these:
+        165894 (61.43%) aligned 0 times
+        101779 (37.69%) aligned exactly 1 time
+        2379 (0.88%) aligned >1 times
+91.71% overall alignment rate
